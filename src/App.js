@@ -12,13 +12,13 @@ const App = () => {
     const API_URL = 'http://www.omdbapi.com?apikey=42d536bc'
 
         const searchMovies = async () => {
-            const response = await fetch(`${API_URL}`)
+            const response = await fetch(`${API_URL}&s={title}`)
             const data = await response.json()
             setMovies(data.Search)
         }
 
         useEffect(()=>{
-            searchMovies('batman')
+            searchMovies('Batman')
         },[])
 
     // const movie1 ={
